@@ -159,7 +159,18 @@ request.then(function(values){
   	// https://leafletjs.com/reference-1.3.4.html#map-click
   	// and the lat/long that is a part of mouse events here:
   	// https://leafletjs.com/reference-1.3.4.html#mouseevent-latlng
-
+function mapHoverHandler(eventObject) {
+    console.log('event object', eventObject);
+    console.log('mouse lat/lng', evenObject.latlng)
+    //update mouse coordinates HTML element with event latlng
+    
+    document.getElementById("mouseCoordinatesBox").innerHTML="newtext";
+    
+    
+}
+    
+map.on('mousemove, mapHoverHandler');
+    });
   	// more hints:
   	//  - first, create an event handler that will take the lat / long
   	//    and update an HTML (div) element with that information
@@ -169,4 +180,3 @@ request.then(function(values){
   	//    (something to the effect of "leaflet display mouse coordinates"
   	//    should help)
 
-});
